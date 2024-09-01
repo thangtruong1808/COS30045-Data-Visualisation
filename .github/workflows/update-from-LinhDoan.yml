@@ -1,0 +1,30 @@
+name: Update from LinhDoan's Fork
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # This runs the workflow daily at midnight
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  update-fork:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+        with:
+          repository: thangtruong1808/COS30045-Data-Visualisation
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: LinhDoan
+        run: git remote add LinhDoan https://github.com/LinhD-888/COS30045-Data-Visualisation.git
+
+      - name: Fetch LinhDoan's changes
+        run: git fetch LinhDoan
+
+      - name: Merge LinhDoan's changes
+        run: git merge LinhDoan/main
+
+      - name: Push changes
+        run: |
+          git push origin main
