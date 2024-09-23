@@ -19,26 +19,63 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
 
     <!-- link to external js file -->
-    <script src="./scripts/myScriptA3C.js"></script>
+    <!-- <script src="./scripts/myScriptA3C.js"></script> -->
+    <!-- <script src="./scripts/dataset1/sumEmploymentBarChart.js"></script> -->
+    <script type="module" src="./scripts/dataset1/lineChart.js"></script>
+    <!-- <script src="./scripts/dataset1/sampleChart.js"></script> -->
   </head>
 
   <body>
     <!-- title of web page -->
-    <h1>Assignment 3C: Website and visualisation</h1>
-    <div>
-      <p>Topic: Dataset1 - Economic-growth-recovered-strongly</p>
-      <ul>
-        <li>Developer: Linh Doan</li>
-        <li>Version : 1.0</li>
+
+    <header>
+      <h1>Assignment 3C - Website and visualisation</h1>
+    </header>
+
+    <div class="title">      
+      <p>Dataset 1 - Economic-growth-recovered-strongly</p>
+      <ul></ul>
+        <li>Developer: Thang Truong</li>
+        <li>Version : 1.1</li>
       </ul>
     </div>
+
+    <div class="description">
+      <p>
+        Description is comming soon . . . Lorem ipsum dolor sit amet
+        consectetur, adipisicing elit. Accusantium suscipit ratione aperiam
+        distinctio et, mollitia, modi labore voluptatibus dolor cumque tempore
+        in veniam. Quidem veniam accusamus natus, eveniet voluptas adipisci?
+      </p>
+    </div>
+    <button id="btn1" class="button active">Line Chart</button>
+    <button id="btn2" class="button">Bar Chart</button>
+    <button id="btn3" class="button">Area Chart</button>
+    <button id="btn4" class="button">Scatter Plot Chart</button>
+
+    <!-- Line Chart -->
+    <div class="figure-container" id="figure1">
+      <figure>
+        <p id="myLineChart"></p>
+        <figcaption>Fig 1: Line Chart</figcaption>
+      </figure>
+    </div>
+
+    <!-- Bart Chart -->
+    <div class="figure-container" id="figure2">
+      <figure>
+        <p id="myBarChart"></p>
+        <figcaption>Fig 2: Bar Chart</figcaption>
+      </figure>
+    </div>
+
     <div>
       <p>
         Topic: Dataset2 -
         The-economy-recovered-rapidly-but-growth-is-now-slowing
       </p>
       <ul>
-        <li>Developer: Thang Truong</li>
+        <li>Developer: Linh Doan</li>
         <li>Version : 1.0</li>
       </ul>
     </div>
@@ -47,7 +84,7 @@
     <footer>
       <div>COS30045 Data Visualisation</div>
       <div>Semester 2 2024</div>
-      <div>Group01B</div>
+      <div>Team 01B</div>
     </footer>
     <!-- end Footer -->
   </body>

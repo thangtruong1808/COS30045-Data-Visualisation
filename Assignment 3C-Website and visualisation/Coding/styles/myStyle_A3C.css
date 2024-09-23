@@ -2,50 +2,92 @@ body {
   padding: 0;
   margin: 0;
   font-size: larger;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1 {
-  padding: 1rem;
+header {
+  padding: 5px;
+  background-color: #d6d3d1;
+  text-align: center;
+}
+
+.title {
+  padding: 1rem 0 0 1rem; /* Remove default padding */
+}
+
+.description {
+  padding: 1rem 0 0 1rem; /* Remove default padding */
+  line-height: 1.7;
 }
 button {
   margin: 0 0 0 1rem;
-  color: whitesmoke;
+  color: black;
   border-radius: 5px;
   padding: 5px;
   cursor: pointer;
-  width: 100px;
+  width: 120px;
 }
-#addBtn {
-  background-color: #0369a1;
-  border-color: #0369a1;
-}
-#rmBtn {
-  background-color: #b91c1c;
-  border-color: #b91c1c;
+#btn1 {
+  background-color: #d6d3d1;
+  border-color: #d6d3d1;
 }
 
-p {
-  padding: 0 0 0 1rem;
+#btn2 {
+  background-color: #d6d3d1;
+  border-color: #d6d3d1;
 }
-
-svg {
-  /* margin: 2rem; */
-  padding: 2rem;
-  background-color: #a8a29e;
+#btn3 {
+  background-color: #d6d3d1;
+  border-color: #d6d3d1;
 }
-
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #44403c;
-  text-align: center;
-  padding: 10px;
-  color: #e2e8f0;
+#btn4 {
+  background-color: #d6d3d1;
+  border-color: #d6d3d1;
 }
 
 .button.active {
   text-decoration: underline;
   font-weight: 900;
+  color: #2563eb;
+}
+
+svg {
+  padding: 2rem;
+  background-color: #d6d3d1;
+}
+
+.line {
+  fill: none;
+  stroke-width: 2px;
+}
+.figure-container {
+  margin: 0;
+  padding: 0;
+}
+
+.figure-container figure {
+  margin: 0;
+  padding: 0;
+}
+
+.figure-container p {
+  margin: 0; /* Remove default margin */
+  padding: 1rem 0 0 1rem; /* Remove default padding */
+}
+
+figure figcaption {
+  width: 855px;
+  background-color: #d6d3d1;
+  margin: 0 0 0 1rem;
+  padding: 5px;
+  text-align: center;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #d6d3d1;
+  text-align: center;
+  padding: 10px;
 }
