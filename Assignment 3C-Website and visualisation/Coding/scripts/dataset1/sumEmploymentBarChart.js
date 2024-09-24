@@ -20,8 +20,6 @@ function loadDataBarChart(callback) {
       date: new Date(d.Date), // Convert to Date object
       year: new Date(d.Date).getFullYear(), // Extract year
       Employment: +d.Employment, // Convert to number
-      Realdomesticdemand: +d.Realdomesticdemand, // Convert to number
-      Nominaldomesticdemand: +d.Nominaldomesticdemand, // Convert to number
     };
   }).then(callback);
 }
@@ -103,6 +101,7 @@ function addLabels(svg, yearEmployment, xScale, yScale) {
 
 function addAxes(svg, xScale, yScale, h) {
   const xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d")); // Format as integer
+
   const yAxis = d3.axisLeft(yScale); // Automatically adjust ticks based on data
 
   svg.append("g").attr("transform", `translate(0, ${h})`).call(xAxis);
@@ -110,19 +109,35 @@ function addAxes(svg, xScale, yScale, h) {
   svg.append("g").call(yAxis);
 }
 
-export function barChart() {
+function addLegend(svg, w, margin) {
+  svg
+    .append("text")
+    .attr("x", (w + margin.left + margin.right) / 3.2)
+    .attr("y", -margin.top / 2 + 5)
+    .attr("text-anchor", "middle")
+    .style("font-size", "18px")
+    .style("font-weight", "bold")
+    .style("fill", "red")
+    .text("Total employment by year growth over time");
+}
+
+export function barChart(margin, w, h) {
+  // console.log("margin: " + margin);
+  // console.log("w: " + w);
+  // console.log("h: " + h);
   d3.select("#myBarChart").selectAll("svg").remove(); // Remove existing SVG
   showCharAndActiveButtont(2);
-  const margin = { top: 20, right: 30, bottom: 30, left: 40 };
-  const w = 800 - margin.left - margin.right;
-  const h = 500 - margin.top - margin.bottom;
+  // const margin = { top: 20, right: 30, bottom: 30, left: 40 };
+  // const w = 800 - margin.left - margin.right;
+  // const h = 500 - margin.top - margin.bottom;
 
   loadDataBarChart(function (dataset) {
-    console.log(dataset);
+    // console.log(dataset);
     const { xScale, yScale, yearEmployment } = createScales(dataset, w, h);
     const svg = createSvg(w, h, margin);
     drawBars(svg, yearEmployment, xScale, yScale, h);
     addLabels(svg, yearEmployment, xScale, yScale);
     addAxes(svg, xScale, yScale, h);
+    addLegend(svg, w, margin);
   });
 }

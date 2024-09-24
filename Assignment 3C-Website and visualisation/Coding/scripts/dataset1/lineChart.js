@@ -1,4 +1,6 @@
 import { barChart } from "./sumEmploymentBarChart.js";
+import { areaChart } from "./areaChart.js";
+import { scatterPlot } from "./scatterPlotChart.js";
 
 function showCharAndActiveButtont(index) {
   const figures = document.querySelectorAll(".figure-container");
@@ -29,7 +31,8 @@ function loadDataLineChar(callback) {
 function createScales(dataset, w, h) {
   const xScale = d3
     .scaleTime()
-    .domain(d3.extent(dataset, (d) => d.date))
+    // .domain(d3.extent(dataset, (d) => d.date))
+    .domain([new Date(2016, 0, 1), new Date(2025, 11, 31)]) // Set domain from 2016 to 2025
     .range([0, w]);
 
   const yScale = d3
@@ -74,7 +77,7 @@ function drawLines(svg, dataset, xScale, yScale, w) {
       .datum(dataset.map((d) => ({ date: d.date, value: d[field] })))
       .attr("fill", "none")
       .attr("stroke", colors[i])
-      .attr("stroke-width", 1.5)
+      .attr("stroke-width", 4.5)
       .attr("d", line)
       .attr("class", `line-${field}`);
 
@@ -85,7 +88,7 @@ function drawLines(svg, dataset, xScale, yScale, w) {
         tooltip.style("display", null);
       })
       .on("mouseout", function () {
-        d3.select(this).attr("stroke-width", 1.5); // Reset line thickness
+        d3.select(this).attr("stroke-width", 4.5); // Reset line thickness
         tooltip.style("display", "none");
       })
       .on("mousemove", function (event, d) {
@@ -148,7 +151,11 @@ function drawLines(svg, dataset, xScale, yScale, w) {
 }
 
 function addAxes(svg, xScale, yScale, h) {
-  const xAxis = d3.axisBottom(xScale);
+  // const xAxis = d3.axisBottom(xScale);
+  const xAxis = d3
+    .axisBottom(xScale)
+    .ticks(d3.timeYear.every(1))
+    .tickFormat(d3.timeFormat("%Y"));
   const yAxis = d3.axisLeft(yScale);
 
   svg.append("g").attr("transform", `translate(0, ${h})`).call(xAxis);
@@ -178,7 +185,15 @@ function init() {
     }
     if (buttonId === "btn2") {
       showCharAndActiveButtont(2);
-      barChart();
+      barChart(margin, w, h);
+    }
+    if (buttonId === "btn3") {
+      showCharAndActiveButtont(3);
+      areaChart(margin, w, h);
+    }
+    if (buttonId === "btn4") {
+      showCharAndActiveButtont(4);
+      scatterPlot(margin, w, h);
     }
   });
 }
