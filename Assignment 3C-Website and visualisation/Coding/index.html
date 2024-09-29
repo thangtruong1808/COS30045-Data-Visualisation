@@ -17,10 +17,13 @@
   <script src="https://d3js.org/d3.v6.min.js"></script>
 
   <!-- link to external js file -->
-  <!-- <script src="./scripts/myScriptA3C.js"></script> -->
-  <!-- <script src="./scripts/dataset1/sumEmploymentBarChart.js"></script> -->
+
   <script type="module" src="./scripts/dataset1/lineChart.js"></script>
-  <!-- <script src="./scripts/dataset1/sampleChart.js"></script> -->
+
+  <!-- Reference the external JavaScript file From Linh -->
+  <script src="scripts/dataset2/RealGDP_LineChart.js"></script>
+  <script src="scripts/dataset2/pieChartRealGDPAustralia.js"></script>
+    <script src="./scripts/dataset2/stackBarChart.js"></script>
 </head>
 
 <body>
@@ -30,169 +33,222 @@
   <header>
     <h1>Assignment 3C - Website and visualisation</h1>
   </header>
+
+
+
   <main>
 
-  <h2>Title: Economic Surveys Australia 2023 - Employment and Demand Indices</h2>
+    <h2>Title: Economic Surveys Australia 2023 - Employment and Demand Indices</h2>
 
     <section class="section1">
 
+      <div class="title">
+        <h3><strong>Dataset 1 - Economic growth recovered strongly</strong></h3>
+      </div>
 
+      <div class="description">
+        <p>
+          There is no doubt that the COVID-19 pandemic, which began in 2020, had a significant negative impact on the
+          global economy. However, the economy has recovered rapidly since the pandemic subsided. We have obtained
+          sample
+          datasets from the OECD Statistics website and have encoded them into various charts.
+          These visualizations not only present raw data but also narrate the story of economic health and trends over
+          time. They serve as powerful tools for economists, policymakers, and anyone interested in understanding the
+          dynamics of economic growth.
+        </p>
+
+        <p><strong>Line Chart:</strong>
+          <span>Each line represents a crucial economic indicator: Employment, Real Domestic Demand, and Nominal
+            Domestic
+            Demand. The x-axis, spanning from January 2016 to December 2025, sets the stage for this temporal narrative,
+            while the y-axis captures the magnitude of these indicators.</span>
+        <ul>
+          <li><strong>Employment:</strong>
+            <span>
+              This line illustrates the trends in employment levels over a specified period. Tracking employment is
+              vital
+              as it serves as a key indicator of the labour market’s health and, by extension, the overall economy. High
+              employment levels typically signal a robust economy with ample job opportunities, whereas declining
+              employment can indicate economic distress. By analyzing employment data, economists and policymakers can
+              assess the effectiveness of economic policies, identify emerging trends, and make informed decisions to
+              promote job creation and economic stability. Understanding these trends helps in crafting strategies to
+              address unemployment and foster a thriving labour market.
+            </span>
+          </li>
+          <li>
+            <strong>Real Domestic Demand:</strong>
+            <span>
+              This indicator measures the total demand for goods and services within the economy, adjusted for
+              inflation.
+              By accounting for inflation, it provides a clearer picture of the true purchasing power within the
+              economy.
+              This metric is crucial for understanding the actual economic activity, as it reflects the real consumption
+              and investment behaviours of households and businesses. Analyzing Real Domestic Demand helps economists
+              and
+              policymakers gauge the underlying strength of the economy and make informed decisions to foster
+              sustainable
+              growth.
+
+            </span>
+          </li>
+          <li>
+            <strong>Nominal Domestic Demand:</strong>
+            <span>This metric represents the total demand for goods and services within the economy, measured in current
+              prices without adjusting for inflation. Unlike Real Domestic Demand, which accounts for changes in price
+              levels, Nominal Domestic Demand reflects the raw, unadjusted figures. This means that it can be
+              significantly influenced by inflation or deflation, as it captures the total expenditure at prevailing
+              prices. By examining Nominal Domestic Demand, economists can gain insights into the overall spending
+              behavior within the economy, though it is important to consider it alongside inflation data to understand
+              the true economic conditions. This measure is crucial for identifying trends in consumer and business
+              spending, and for making informed decisions regarding fiscal and monetary policies.</span>
+          </li>
+        </ul>
+        </p>
+
+        <p><strong>Bar Chart:</strong>
+
+          <span>
+            The Bar Chart provides a visual representation of employment data spanning multiple years. Each bar
+            corresponds to the total employment for a specific year, making it easy to see how employment levels have
+            changed over time. The x-axis, which displays the years, facilitates straightforward comparisons between
+            different periods. This visualization is particularly useful for identifying trends, such as periods of
+            economic growth where employment levels rise, or times of economic downturn where employment may decline. By
+            examining these patterns, economists and policymakers can gain valuable insights into the health of the
+            labour
+            market and the broader economy. This information can then be used to inform decisions and strategies aimed
+            at
+            promoting job creation and economic stability.
+          </span>
+        </p>
+        <p><strong>Area Chart:</strong>
+          <span>
+            The Area Chart offers a comprehensive visualization of Real Domestic Demand over nearly a decade, spanning
+            from 2016 to 2025. This crucial economic indicator measures the total demand for goods and services within
+            the
+            economy, adjusted for inflation, thereby providing a clear and accurate picture of actual purchasing power
+            and
+            economic activity. The chart not only highlights the overall demand but also illustrates how Real Domestic
+            Demand has evolved over the years. By examining the filled area, one can easily identify periods of
+            increased
+            or decreased demand, reflecting the economic highs and lows during this timeframe. The y-axis, which
+            represents the values of Real Domestic Demand, facilitates straightforward comparisons across different
+            years,
+            making it easier to spot trends and patterns in economic activity. This visualization is invaluable for
+            economists and policymakers as it helps them understand the underlying dynamics of the economy, assess the
+            effectiveness of economic policies, and make informed decisions to promote sustainable growth.
+          </span>
+        </p>
+        <p><strong>Scatter plot Chart:</strong>
+          <span>This scatter plot serves as an effective tool for illustrating the changes in Nominal Domestic Demand
+            over
+            time, offering a clear and engaging method to visualize economic data. Nominal Domestic Demand is an
+            important
+            economic indicator that measures the total demand for goods and services within the economy at current
+            prices,
+            without adjusting for inflation. This means it reflects the raw expenditure figures, capturing the impact of
+            price level changes over the years. The y-axis, which displays the values of Nominal Domestic Demand, allows
+            for straightforward comparisons across different years, making it easier to identify trends and patterns in
+            economic activity. By examining the scatter plot, one can observe how demand has fluctuated, pinpointing
+            periods of economic expansion or contraction. This visualization is particularly useful for economists and
+            policymakers as it provides insights into consumer and business spending behaviours, helping to inform
+            decisions and strategies aimed at fostering economic stability and growth.</span>
+        </p>
+      </div>
+    </section>
+    <section class="section2">
+      <button id="btn1" class="button active">Line Chart</button>
+      <button id="btn2" class="button">Bar Chart</button>
+      <button id="btn3" class="button">Area Chart</button>
+      <button id="btn4" class="button">Scatter Plot Chart</button>
+      <!-- Line Chart -->
+      <div class="figure-container" id="figure1">
+        <figure>
+          <p id="myLineChart"></p>
+          <figcaption>Fig 1: Economic growth recovery strongly from 2016 to 2025</figcaption>
+        </figure>
+      </div>
+
+      <!-- Bart Chart -->
+      <div class="figure-container" id="figure2">
+        <figure>
+          <p id="myBarChart"></p>
+          <figcaption>Fig 2: Sum of Employment by year</figcaption>
+        </figure>
+      </div>
+
+      <!-- Area Chart -->
+      <div class="figure-container" id="figure3">
+        <figure>
+          <p id="myAreaChart"></p>
+          <figcaption>Fig 3: Real domestic demand by year</figcaption>
+        </figure>
+      </div>
+
+      <!-- Scatter Plot Chart -->
+      <div class="figure-container" id="figure4">
+        <figure>
+          <p id="myScatterPlotChart"></p>
+          <figcaption>Fig 4: Nominal domestic demand by year</figcaption>
+        </figure>
+      </div>
+
+    </section>
+
+    <section id="dataset2">
     <div class="title">
-      <h3><strong>Dataset 1 - Economic growth recovered strongly</strong></h3>
+     <h3><strong>Dataset 2 - The-economy-recovered-rapidly-but-growth-is-now-slowing</strong></h3>
+     <p>
+      Real GDP is a vital measure of a nation’s economic well-being. It reflects the total value of all goods and services produced, adjusted for inflation, offering a clear picture of the economy’s strength. This <strong> Line chart </strong> illustrates the trend in countries’ real GDP from Q4 2019 to Q2 2023, a timeframe characterized by notable economic upheavals and subsequent recovery.        
+     </p>
+    </div>
+
+    <!-- <div class="figure-container" id="figure1"> -->
+    <div class="figure-container-dataset2">
+      <figure>
+        <p id="Real_GDP_from_all_countries"></p>
+        <figcaption>Fig 5: Real_GDP_from_all_countries</figcaption>
+      </figure>
+    </div>
+    <div class="description">
+      <p>
+        <strong>Stacked BarChart: </strong>
+        <span>This chart compellingly depicts the economy’s path of resilience and recovery spanning from late 2019 to mid-2023. It emphasizes the notable variations in key economic factors like household consumption, private investment, and net exports, and their combined effect on GDP growth. Each part of the chart narrates a segment of this intricate story, highlighting the dynamic interactions between various sectors and their roles in shaping the economic landscape throughout this significant period.</span>
+      </p>
+    </div>
+    
+    <div class="figure-container-dataset2">
+      <figure>
+        <p id="stackBarChart"></p>
+        <figcaption>Fig 6: Contributions to quarterly GDP growth</figcaption>
+      </figure>
     </div>
 
     <div class="description">
       <p>
-        There is no doubt that the COVID-19 pandemic, which began in 2020, had a significant negative impact on the
-        global economy. However, the economy has recovered rapidly since the pandemic subsided. We have obtained sample
-        datasets from the OECD Statistics website and have encoded them into various charts.
-        These visualizations not only present raw data but also narrate the story of economic health and trends over
-        time. They serve as powerful tools for economists, policymakers, and anyone interested in understanding the
-        dynamics of economic growth.
-      </p>
-
-      <p><strong>Line Chart:</strong>
-        <span>Each line represents a crucial economic indicator: Employment, Real Domestic Demand, and Nominal Domestic
-          Demand. The x-axis, spanning from January 2016 to December 2025, sets the stage for this temporal narrative,
-          while the y-axis captures the magnitude of these indicators.</span>
-      <ul>
-        <li><strong>Employment:</strong>
-          <span>
-            This line illustrates the trends in employment levels over a specified period. Tracking employment is vital
-            as it serves as a key indicator of the labour market’s health and, by extension, the overall economy. High
-            employment levels typically signal a robust economy with ample job opportunities, whereas declining
-            employment can indicate economic distress. By analyzing employment data, economists and policymakers can
-            assess the effectiveness of economic policies, identify emerging trends, and make informed decisions to
-            promote job creation and economic stability. Understanding these trends helps in crafting strategies to
-            address unemployment and foster a thriving labour market.
-          </span>
-        </li>
-        <li>
-          <strong>Real Domestic Demand:</strong>
-          <span>
-            This indicator measures the total demand for goods and services within the economy, adjusted for inflation.
-            By accounting for inflation, it provides a clearer picture of the true purchasing power within the economy.
-            This metric is crucial for understanding the actual economic activity, as it reflects the real consumption
-            and investment behaviours of households and businesses. Analyzing Real Domestic Demand helps economists and
-            policymakers gauge the underlying strength of the economy and make informed decisions to foster sustainable
-            growth.
-
-          </span>
-        </li>
-        <li>
-          <strong>Nominal Domestic Demand:</strong>
-          <span>This metric represents the total demand for goods and services within the economy, measured in current
-            prices without adjusting for inflation. Unlike Real Domestic Demand, which accounts for changes in price
-            levels, Nominal Domestic Demand reflects the raw, unadjusted figures. This means that it can be
-            significantly influenced by inflation or deflation, as it captures the total expenditure at prevailing
-            prices. By examining Nominal Domestic Demand, economists can gain insights into the overall spending
-            behavior within the economy, though it is important to consider it alongside inflation data to understand
-            the true economic conditions. This measure is crucial for identifying trends in consumer and business
-            spending, and for making informed decisions regarding fiscal and monetary policies.</span>
-        </li>
-      </ul>
-      </p>
-
-      <span></span>
-      <p><strong>Bar Chart:</strong>
-
-        <span>
-          The Bar Chart provides a visual representation of employment data spanning multiple years. Each bar
-          corresponds to the total employment for a specific year, making it easy to see how employment levels have
-          changed over time. The x-axis, which displays the years, facilitates straightforward comparisons between
-          different periods. This visualization is particularly useful for identifying trends, such as periods of
-          economic growth where employment levels rise, or times of economic downturn where employment may decline. By
-          examining these patterns, economists and policymakers can gain valuable insights into the health of the labour
-          market and the broader economy. This information can then be used to inform decisions and strategies aimed at
-          promoting job creation and economic stability.
-        </span>
-      </p>
-      <p><strong>Area Chart:</strong>
-        <span>
-          The Area Chart offers a comprehensive visualization of Real Domestic Demand over nearly a decade, spanning
-          from 2016 to 2025. This crucial economic indicator measures the total demand for goods and services within the
-          economy, adjusted for inflation, thereby providing a clear and accurate picture of actual purchasing power and
-          economic activity. The chart not only highlights the overall demand but also illustrates how Real Domestic
-          Demand has evolved over the years. By examining the filled area, one can easily identify periods of increased
-          or decreased demand, reflecting the economic highs and lows during this timeframe. The y-axis, which
-          represents the values of Real Domestic Demand, facilitates straightforward comparisons across different years,
-          making it easier to spot trends and patterns in economic activity. This visualization is invaluable for
-          economists and policymakers as it helps them understand the underlying dynamics of the economy, assess the
-          effectiveness of economic policies, and make informed decisions to promote sustainable growth.
-        </span>
-      </p>
-      <p><strong>Scatter plot Chart:</strong>
-        <span>This scatter plot serves as an effective tool for illustrating the changes in Nominal Domestic Demand over
-          time, offering a clear and engaging method to visualize economic data. Nominal Domestic Demand is an important
-          economic indicator that measures the total demand for goods and services within the economy at current prices,
-          without adjusting for inflation. This means it reflects the raw expenditure figures, capturing the impact of
-          price level changes over the years. The y-axis, which displays the values of Nominal Domestic Demand, allows
-          for straightforward comparisons across different years, making it easier to identify trends and patterns in
-          economic activity. By examining the scatter plot, one can observe how demand has fluctuated, pinpointing
-          periods of economic expansion or contraction. This visualization is particularly useful for economists and
-          policymakers as it provides insights into consumer and business spending behaviours, helping to inform
-          decisions and strategies aimed at fostering economic stability and growth.</span>
+        <strong>PieChart: </strong>
+        <span>Based on the OECD dataset, the pie chart illustrates Australia’s economic journey from Q4 2019 to Q2 2023. Starting at a baseline of 100, the chart shows the pandemic’s initial impact with a dip to 99.77 in Q1 2020 and a significant drop to 93.11 in Q2 2020. This period marks the lowest point, reflecting early pandemic economic strain. However, the economy begins to recover, climbing to 96.61 in Q3 2020 and nearly reaching pre-pandemic levels by Q4 2020 at 99.82. The recovery continues into 2021, with Q1 increasing to 101.95 and Q2 reaching 102.64. Despite a slight dip in Q3 2021 to 100.53, the value rebounds to 104.43 by Q4 2021. The upward trend persists into 2022, peaking at 107.26 in Q4 2022. The first half of 2023 maintains this positive trajectory, with Q1 at 107.66 and Q2 reaching a new high of 108.04. The legends, positioned neatly to the side, highlight these quarterly changes, each colour symbolizing a different period and its corresponding economic value, showcasing the highs and lows of Australia’s market activities over the years..</span>
       </p>
     </div>
+   <!-- Line Chart -->
+   <div class="figure-container-dataset2" >
+    <figure>
+      <p id="pieChartRealGDPAustralia"></p>
+      <figcaption>Fig 7: Real GDP in Australia</figcaption>
+    </figure>
+  </div>
+
+
+
   </section>
-  <section class="section2">
-    <button id="btn1" class="button active">Line Chart</button>
-    <button id="btn2" class="button">Bar Chart</button>
-    <button id="btn3" class="button">Area Chart</button>
-    <button id="btn4" class="button">Scatter Plot Chart</button>
-    <!-- Line Chart -->
-    <div class="figure-container" id="figure1">
-      <figure>
-        <p id="myLineChart"></p>
-        <figcaption>Fig 1: Economic growth recovery strongly from 2016 to 2025</figcaption>
-      </figure>
-    </div>
+  
 
-    <!-- Bart Chart -->
-    <div class="figure-container" id="figure2">
-      <figure>
-        <p id="myBarChart"></p>
-        <figcaption>Fig 2: Sum of Employment by year</figcaption>
-      </figure>
-    </div>
-
-    <!-- Area Chart -->
-    <div class="figure-container" id="figure3">
-      <figure>
-        <p id="myAreaChart"></p>
-        <figcaption>Fig 3: Real domestic demand by year</figcaption>
-      </figure>
-    </div>
-
-    <!-- Scatter Plot Chart -->
-    <div class="figure-container" id="figure4">
-      <figure>
-        <p id="myScatterPlotChart"></p>
-        <figcaption>Fig 4: Nominal domestic demand by year</figcaption>
-      </figure>
-    </div>
-    
-  </section>
-
-
-
-    <div>
-      <p>
-        Topic: Dataset2 -
-        The-economy-recovered-rapidly-but-growth-is-now-slowing
-      </p>
-      <ul>
-        <li>Developer: Linh Doan</li>
-        <li>Version : 1.0</li>
-      </ul>
-    </div>
   </main>
 
 
   <!-- Start Footer -->
   <footer>
     <div>COS30045 Data Visualisation</div>
-    <div>Semester 2 2024</div>
+    <div>TP2-2024</div>
     <div>Team 01B</div>
   </footer>
   <!-- end Footer -->
